@@ -4,7 +4,7 @@ const playingField = {
   mainArea: document.getElementById("main"),
   eggArea: document.getElementById("eggs"),
   width: clamp(window.innerWidth - 20, 400, 1950),
-  height: clamp(window.innerHeight - 60, 400, 1295),
+  height: clamp(window.innerHeight - 50, 400, 1295),
   image: {
     canvas: document.getElementById("myCanvas"),
     context: function () {
@@ -79,6 +79,7 @@ const playingField = {
     },
     restart: document.getElementById("restart"),
   },
+  popups: document.getElementById('popups'),
   question: {
     popup: document.getElementById("question-popup"),
     num: 0,
@@ -135,9 +136,20 @@ window.onload = function () {
         0,
         playingField.width,
         playingField.height
-      ); // Or at whatever offset you like
-      playingField.mainArea.setAttribute('style', `max-width: ${playingField.width}px;`);
-      playingField.tracker.header.setAttribute('style', `max-width: ${playingField.width}px;`);
+      );
+
+      playingField.boundingBox.setAttribute(
+        'style',
+        `max-width: ${playingField.width}px;
+         min-width: ${playingField.width}px;
+         max-height: ${playingField.height}px;
+         min-height: ${playingField.height}px;`
+      );
+      playingField.popups.setAttribute(
+        'style',
+        `left: ${playingField.width/2}px;
+         top: ${playingField.height/2}px;`
+      )
   };
   //hard code the image so we can grab pixel data with out CORS violation.
   img.src = imgString2();
@@ -352,6 +364,7 @@ const coloredEgg = (id) => {
   //set up the egg click
   egg.onclick = () => {
     //id is from the previous scope
+    console.log('clicked');
     questionBlock(id);
   };
   return egg;
