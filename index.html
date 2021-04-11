@@ -8,19 +8,23 @@
     <script src="scripts/main.js" defer></script>
   </head>
   <body>
+
     <div id="back">
       <div id="header-info" class="header">
-        <div><button class="button" id="restart">Restart</button></div>
+
+        <div>
+          <button class="button" id="ptable-link">Periodic Table Link</button>
+          <button class="button" id="restart">Restart</button>
+        </div>
         <div id="tracker" class="tracker">
           <div id="num-correct">0</div>
           <div>/</div>
+
           <div id="total">0</div>
           <div>&nbspfound and solved!</div>
         </div>
       </div>
       <div id="main">
-
-
         <canvas id="myCanvas" class="canvas"></canvas>
         <div id="eggs">
         </div>
@@ -59,5 +63,6 @@
         </div>
       </div>
     </div>
+    <div id="target"></div>
   </body>
 </html>
