@@ -218,8 +218,8 @@ function returnEgg() {
 }
 
 playingField.question.hint.onclick = () => {
-  let questImage = document.getElementById("hint-images");
-  questImage.hidden = false;
+  let questImages = document.getElementById("question-images-wrapper");
+  questImages.hidden = false;
 };
 
 playingField.question.checkAnswer.onclick = () => {
@@ -408,15 +408,16 @@ function questionBlock(num) {
   //set up the images
   element = document.createElement("div");
   element.classList.add("question-images-wrapper");
+  element.id = "question-images-wrapper";
 
   for (let i = 0; i < questionParams.images.length; i++) {
     let questImage = document.createElement("img");
     questImage.src = `img/${questionParams.images[i]}`;
     questImage.classList.add("question-image");
     questImage.id = "hint-images";
-    questImage.hidden = true;
     element.appendChild(questImage);
   }
+  element.hidden = true;
   //add images to the quesiton block
   playingField.question.questionText.appendChild(element);
 }
