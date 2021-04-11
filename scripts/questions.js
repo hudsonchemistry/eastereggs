@@ -549,7 +549,6 @@ const eggQuestions = [
   },
   {
     questions: [
-      "64",
       "For Ionic Bonding, it wants to gain 2 electrons. For Covalent Bonding, it wants to bond with 2 elements. 3rd energy level: ___",
       "95 protons: ___",
     ],
