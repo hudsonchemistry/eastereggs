@@ -8,53 +8,55 @@
     <script src="scripts/main.js" defer></script>
   </head>
   <body>
-    <div id="header-info" class="header">
-      <div><button class="button" id="restart">Restart</button></div>
-      <div id="tracker" class="tracker">
-        <div id="num-correct">0</div>
-        <div>/</div>
-        <div id="total">0</div>
-        <div>&nbspfound and solved!</div>
-      </div>
-    </div>
     <div id="back">
+      <div id="header-info" class="header">
+        <div><button class="button" id="restart">Restart</button></div>
+        <div id="tracker" class="tracker">
+          <div id="num-correct">0</div>
+          <div>/</div>
+          <div id="total">0</div>
+          <div>&nbspfound and solved!</div>
+        </div>
+      </div>
       <div id="main">
+        <div id="popups">
+          <div id="hide-eggs" class="centered egg-start-popup">
+            <div class="egg-number-title">
+              <p class="egg-number-label">How many eggs do you want hidden?</p>
+              <p id="min-max" class="egg-number-label">(10-77)</p>
+            </div>
+            <input type="number" id="egg-number" min=10 max=77 value=15>
+            <div class="number-controls">
+              <button class="number-control left" id="subtract">-</button>
+              <button class="number-control right" id="add">+</button>
+            </div>
+            <div class="start-control">
+              <button class="button" id="start">Start!</button>
+            </div>
+          </div>
+          <div id="completed" class="centered egg-start-popup" hidden>
+            <div id="win-message">You found all the eggs!</div>
+            <button id="hide-more">Hide More!</button>
+          </div>
+          <div id="question-popup" class="centered question-popup hidden">
+            <div id="questions">
+
+            </div>
+            <div id="feedback" class="hidden"></div>
+            <div id="answer-input-wrapper">
+              <input id="answer-input" type="text" maxlength="10" class="answer">
+              <button class="button" id="check-answer">Check Answer</button>
+              <button class="button" id="return">Put Egg Back</button>
+              <button class="button" id="hint">Hint</button>
+            </div>
+          </div>
+        </div>
+
         <canvas id="myCanvas" class="canvas"></canvas>
         <div id="eggs">
         </div>
       </div>
-    </div>
-    <div id="popups">
-      <div id="hide-eggs" class="centered egg-start-popup">
-        <div class="egg-number-title">
-          <p class="egg-number-label">How many eggs do you want hidden?</p>
-          <p id="min-max" class="egg-number-label">(10-77)</p>
-        </div>
-        <input type="number" id="egg-number" min=10 max=77 value=15>
-        <div class="number-controls">
-          <button class="number-control left" id="subtract">-</button>
-          <button class="number-control right" id="add">+</button>
-        </div>
-        <div class="start-control">
-          <button class="button" id="start">Start!</button>
-        </div>
-      </div>
-      <div id="completed" class="centered egg-start-popup" hidden>
-        <div id="win-message">You found all the eggs!</div>
-        <button id="hide-more">Hide More!</button>
-      </div>
-      <div id="question-popup" class="centered question-popup hidden">
-        <div id="questions">
 
-        </div>
-        <div id="feedback" class="hidden"></div>
-        <div id="answer-input-wrapper">
-          <input id="answer-input" type="text" maxlength="10" class="answer">
-          <button class="button" id="check-answer">Check Answer</button>
-          <button class="button" id="return">Put Egg Back</button>
-          <button class="button" id="hint">Hint</button>
-        </div>
-      </div>
     </div>
 
 
