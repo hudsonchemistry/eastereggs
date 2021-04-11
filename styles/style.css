@@ -1,0 +1,155 @@
+html {
+  font-family: Helvetica, sans-serif;
+}
+.header {
+  display: flex;
+  justify-content: space-between;
+  padding-bottom: 10px;
+}
+
+.tracker {
+  display: flex;
+}
+
+#main {
+  position: relative;
+  width: 100%;
+  height: 100%;
+}
+#back {
+  width: 100%;
+  height: calc(100%-60px);
+  display: grid;
+  /* align-content: center;
+  justify-content: center; */
+}
+.canvas{
+  border: 2px solid black;
+  border-radius: 5px;
+}
+.centered{
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.question-popup {
+  padding: 10px;
+  background-color: white;
+  max-width: 500px;
+  border-radius: 5px;
+  filter: drop-shadow(5px 5px 2px rgba(75, 75, 75,0.6))
+}
+
+.answer{
+  width: 10em;
+}
+
+
+.hidden{
+  display: none;
+  transition-duration: 1000ms;
+}
+.question-images-wrapper{
+
+  margin: 10px;
+}
+.question-image{
+  height: 150px;
+}
+.correct {
+  background-color: blue;
+
+}
+
+
+.egg-start-popup {
+  padding: 10px;
+  background-color: white;
+  max-width: 500px;
+  border-radius: 5px;
+  filter: drop-shadow(5px 5px 2px rgba(75, 75, 75,0.6));
+  text-align: center;
+}
+
+.egg-number-label {
+  font-size: 18px;
+  font-weight: 700;
+  margin: 0;
+}
+.number-controls {
+  font-size: 0;
+  margin-bottom: 23px;
+}
+
+.number-control {
+  border: solid 1px #4c7ef3;
+  display: inline-block;
+  width: 45px;
+  height: 35px;
+  font-size: 24px;
+  font-weight: 700;
+  color: #4c7ef3;
+  cursor: pointer;
+}
+
+.number-controls button[disabled] {
+  color: #dfdfdf;
+  cursor: default;
+}
+
+.left {
+  border-top-left-radius: 22.5px;
+  border-bottom-left-radius: 22.5px;
+}
+
+.right {
+  border-top-right-radius: 22.5px;
+  border-bottom-right-radius: 22.5px;
+  border-left-width: 0px;
+}
+
+
+
+#hide-eggs input {
+  height: 90px;
+  width: 90px;
+  font-size: 30px;
+  text-align: center;
+  margin: 0 auto;
+  margin-bottom: 7px;
+}
+
+input[type=number]::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+}
+
+.removed {
+  -webkit-animation: disapear 1.5s;
+  -webkit-animation-fill-mode: forwards;
+  animation: disapear 1.5s;
+  animation-fill-mode: forwards;
+}
+
+@-webkit-keyframes disapear{
+
+  50% {
+    opacity: 100%;
+  }
+
+  100% {
+    opacity: 0;
+  }
+}
+
+@keyframes disapear{
+
+  50% {
+    opacity: 100%;
+  }
+
+  100% {
+    opacity: 0;
+  }
+}
