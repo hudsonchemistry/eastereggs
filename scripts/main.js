@@ -1,5 +1,6 @@
 //global object
 const playingField = {
+  boundingBox: document.getElementById('back'),
   mainArea: document.getElementById("main"),
   eggArea: document.getElementById("eggs"),
   width: clamp(window.innerWidth - 20, 400, 1950),
@@ -89,6 +90,7 @@ const playingField = {
     feedback: document.getElementById("feedback"),
   },
   tracker: {
+    header: document.getElementById("header-info"),
     total: document.getElementById("total"),
     correct: document.getElementById("num-correct"),
     reset: function () {
@@ -134,9 +136,12 @@ window.onload = function () {
         playingField.width,
         playingField.height
       ); // Or at whatever offset you like
+      playingField.mainArea.setAttribute('style', `max-width: ${playingField.width}px;`);
+      playingField.tracker.header.setAttribute('style', `max-width: ${playingField.width}px;`);
   };
   //hard code the image so we can grab pixel data with out CORS violation.
   img.src = imgString2();
+
 };
 
 playingField.setup.minMax.innerHTML = `(${playingField.setup.minEggs}-${playingField.setup.maxEggs})`;
