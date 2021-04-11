@@ -39,6 +39,7 @@ html {
 .question-popup {
   padding: 10px;
   background-color: white;
+  min-width: 412px;
   max-width: 500px;
   border-radius: 5px;
   filter: drop-shadow(5px 5px 2px rgba(75, 75, 75,0.6))
@@ -69,6 +70,7 @@ html {
 .egg-start-popup {
   padding: 10px;
   background-color: white;
+  min-width: 340px;
   max-width: 500px;
   border-radius: 5px;
   filter: drop-shadow(5px 5px 2px rgba(75, 75, 75,0.6));
