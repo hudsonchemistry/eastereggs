@@ -94,6 +94,7 @@ const playingField = {
     header: document.getElementById("header-info"),
     total: document.getElementById("total"),
     correct: document.getElementById("num-correct"),
+    pTable: document.getElementById('ptable-link'),
     reset: function () {
       this.correct.innerHTML = "0";
     },
@@ -153,7 +154,6 @@ window.onload = function () {
   };
   //hard code the image so we can grab pixel data with out CORS violation.
   img.src = imgString2();
-
 };
 
 playingField.setup.minMax.innerHTML = `(${playingField.setup.minEggs}-${playingField.setup.maxEggs})`;
@@ -195,6 +195,10 @@ playingField.setup.start.onclick = () => {
   //hide the setup screen
   playingField.setup.popup.classList.add("hidden");
 };
+
+playingField.tracker.pTable.onclick = () => {
+  window.open("https://pubchem.ncbi.nlm.nih.gov/periodic-table/", '_blank');
+}
 
 playingField.setup.restart.onclick = () => {
   playingField.eggArea.innerHTML = "";
@@ -247,6 +251,8 @@ playingField.question.checkAnswer.onclick = () => {
       "Incorrect! Make sure capitalization is correct!";
   }
 };
+
+
 
 const coloredEgg = (id) => {
   //returns a completed egg div
